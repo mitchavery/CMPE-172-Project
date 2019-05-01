@@ -5,6 +5,7 @@ import Navbar from './Components/layout/Navbar';
 import Home from './Components/pages/Home'; 
 import Portal from './Components/pages/Portal'; 
 import profile from './Components/pages/profile'; 
+import Settings from './Components/pages/settings'; 
 
 import Login from './Components/auth/login';
 
@@ -32,6 +33,7 @@ class App extends Component {
               <Route path="/" exact={true} component={Home} />
               <SecureRoute path="/profile" exact={true} component={profile} />
               <SecureRoute path="/portal" exact={true} component={Portal} />
+              <SecureRoute path="/Settings" exact={true} component={Settings} />
               <Route
                 path="/login"
                 render={() => <Login baseUrl="https://dev-329764.okta.com" />}

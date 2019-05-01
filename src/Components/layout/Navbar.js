@@ -34,6 +34,11 @@ class Navbar extends Component {
                   Profile
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/Settings">
+                  Logout
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
