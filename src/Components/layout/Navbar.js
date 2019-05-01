@@ -29,6 +29,11 @@ class Navbar extends Component {
                   Portal
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/Profile">
+                  Profile
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Mitch from '../Mitch.PNG'; 
 
 class Staff extends Component {
   state = {
@@ -19,8 +20,9 @@ class Staff extends Component {
 
     return (
       <div>
-        <h1>Welcome {currentUserName}</h1>
+        <h1>{currentUserName}</h1>
         <p>Email: {currentUserEmail}</p>
+        <img src={Mitch} width = "362" height = "391" alt = "Mitch" />
         <p>You have reached the authorized portal area of the portal</p>
       </div>
     );
