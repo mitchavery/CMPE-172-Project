@@ -12,7 +12,8 @@ export default withAuth(class Login extends Component {
     this.checkAuthentication();
   }
 
-  async checkAuthentication() {
+  async checkAuthentication() 
+  {
     const authenticated = await this.props.auth.isAuthenticated();
     if (authenticated !== this.state.authenticated) {
       this.setState({ authenticated });
@@ -23,12 +24,17 @@ export default withAuth(class Login extends Component {
     this.checkAuthentication();
   }
 
-  onSuccess = (res)  => {
+  
+  onSuccess = (res)  => 
+  {
+    console.log(res);
     if (res.status === 'SUCCESS') {
-      return this.props.auth.redirect({
+      return this.props.auth.redirect
+      ({
         sessionToken: res.session.token
       });
-   } else {
+   } else 
+   {
     // The user can be in another authentication state that requires further action.
     // For more information about these states, see:
     //   https://github.com/okta/okta-signin-widget#rendereloptions-success-error

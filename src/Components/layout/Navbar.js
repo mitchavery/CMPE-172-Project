@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+      <nav className="navbar navbar-expand-bg navbar-dark bg-dark mb-4">
         <div className="container">
           <Link className="navbar-brand" to="/">
             Cloud Gang Employee Portal
@@ -37,6 +37,11 @@ class Navbar extends Component {
               <li className="nav-item">
                 <Link className="nav-link" to="/Settings">
                   Logout
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/Admin">
+                  Admin
                 </Link>
               </li>
             </ul>

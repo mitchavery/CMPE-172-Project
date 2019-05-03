@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Staff extends Component {
+class Admin extends Component {
   state = {
     currentUserName: '',
     currentUserEmail: '', 
@@ -21,12 +21,11 @@ class Staff extends Component {
 
     return (
       <div>
-        <h1>Welcome {currentUserName}</h1>
-        <p>Email: {currentUserEmail}</p>
-        <p>You have reached the authorized portal area of the employee database</p>
+        <h1> Admin View </h1>
+        
       </div>
     );
   }
 }
 
-export default Staff;
+export default Admin;
