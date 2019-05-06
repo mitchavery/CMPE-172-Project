@@ -2,22 +2,16 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom'; 
 import {Security, SecureRoute, ImplicitCallback} from '@okta/okta-react'; 
 import Navbar from './Components/layout/Navbar'; 
+import Footer1 from './Components/layout/Footer1'; 
 import Home from './Components/pages/Home'; 
 import Admin from './Components/pages/Admin'; 
 import profile from './Components/pages/profile'; 
+import EmployeesList from './Components/pages/EmployeesList'; 
+import Search from './Components/pages/Search';
 import Settings from './Components/pages/settings'; 
 import Portal from './Components/pages/Portal'; 
-
-//import CompanyView from './Components/pages/Companyview';
 import "./App.css"
 import Login from './Components/auth/login';
-
-const config = 
-{
-  issuer: 'https://https://dev-329764.okta.com/oauth2/default',
-  redirect_uri: window.location.origin + '/implicit/callback',
-  client_id: '0oaitauk9gmDNbshk356'
-}
 
 
 function onAuthRequired({history})
@@ -36,6 +30,7 @@ class App extends Component {
           onAuthRequired={onAuthRequired}
         >
           <div className="App">
+          
             <Navbar />
             <div className="container">
               <Route path="/" exact={true} component={Home} />
@@ -43,15 +38,19 @@ class App extends Component {
               <SecureRoute path="/Admin" exact={true} component={Admin} />
               <SecureRoute path="/Settings" exact={true} component={Settings} />
               <SecureRoute path="/Portal" exact={true} component={Portal} />
+              <SecureRoute path="/Search" exact={true} component={Search} />
+              <SecureRoute path="/EmployeesList" exact={true} component={EmployeesList} />
               <Route
                 path="/login"
                 render={() => <Login baseUrl="https://dev-329764.okta.com" />}
               />
               <Route path="/implicit/callback" component={ImplicitCallback} />
             </div>
+            <Footer1 />
           </div>
         </Security>
       </Router>
+
     );
   }
 }

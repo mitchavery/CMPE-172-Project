@@ -22,8 +22,21 @@ class Staff extends Component {
     return (
       <div>
         <h1>Welcome {currentUserName}</h1>
-        <p>Email: {currentUserEmail}</p>
-        <p>You have reached the authorized portal area of the employee database</p>
+        <p><b>Email:</b> {currentUserEmail}</p>
+        <p><b>Phone number:</b> 510-589-1194 </p>
+        <p><b>Net Pay:</b>$33.0/hr </p>
+        <p><b>Withholdings:</b> 20%</p>
+        <p><b>Client ID:</b> 010343814</p>
+        <p><b>Team: </b> Global Apps </p>
+        <p1>You have reached the authorized portal area of the employee database</p1>
+        <p> 
+
+
+
+
+
+
+        </p>
       </div>
     );
   }

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '@okta/okta-react';
-//import { EditingState } from '@devexpress/dx-react-grid';
+//import Portal from '../Portal.png'; 
+//import "./Home.css"
 
 export default withAuth(
-  class Home extends Component 
-  {
+  class Home extends Component {
     constructor(props) {
       super(props);
       this.state = { authenticated: null };
@@ -53,7 +53,7 @@ export default withAuth(
         </div>
       ) : (
         <div>
-          <p className="lead">If you are an emoloyee, please login below</p>
+          <p className="lead">If you are an employee, please login below</p>
           <button className="btn btn-dark btn-lg" onClick={this.login}>
             Login
           </button>
@@ -62,9 +62,10 @@ export default withAuth(
 
       return (
         <div className="jumbotron">
-          <h1 className="display-4">Employee</h1>
+          <h1 className="display-4">Employee Staff Portal</h1>
           {mainContent}
         </div>
+
       );
     }
   }
