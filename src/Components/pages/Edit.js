@@ -1,157 +1,193 @@
-import React, {Component} from 'react';
-import axios from 'axios';
+import React, { Component } from "react";
+import axios from "axios";
 
-export default class EditTodo extends Component {
+export default class Edit extends Component {
+  constructor(props) {
+    super(props);
 
-    constructor(props) {
-        super(props);
+    this.onChangeEmployeesName = this.onChangeEmployeesName.bind(this);
+    this.onChangeEmployeesEmail = this.onChangeEmployeesEmail.bind(this);
+    this.onChangeEmployeesID = this.onChangeEmployeesID.bind(this);
+    this.onChangeEmployeesManager = this.onChangeEmployeesManager.bind(this);
+    this.onChangeEmployeesTeam = this.onChangeEmployeesTeam.bind(this);
+    this.onChangeEmployeesStatus = this.onChangeEmployeesStatus.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
 
-        this.onChangeEmployeesName = this.onChangeEmployeesName.bind(this);
-        this.onChangeEmployeesEmail = this.onChangeEmployeesEmail.bind(this);
-        this.onChangeEmployeesID = this.onChangeEmployeesID.bind(this);
-        this.onChangeEmployeesManager = this.onChangeEmployeesManager.bind(this);
-        this.onChangeEmployeesTeam = this.onChangeEmployeesTeam.bind(this);
-        this.onChangeEmployeesStatus = this.onChangeEmployeesStatus.bind(this);
+    this.state = {
+      employees_Name: "",
+      employees_Email: "",
+      employees_ID: "",
+      employees_Manager: "",
+      employees_Team: "",
+      employees_Status: ""
+    };
+  }
 
-
-        this.onSubmit = this.onSubmit.bind(this);
-
-        this.state = {
-            todo_description: '',
-            todo_responsible: '',
-            todo_priority: '',
-            todo_completed: false
-        }
-    }
-
-    componentDidMount() {
-        axios.get('http://localhost:4000/employees/'+this.props.match.params.id)
-            .then(response => {
-                this.setState({
-                    todo_description: response.data.todo_description,
-                    todo_responsible: response.data.todo_responsible,
-                    todo_priority: response.data.todo_priority,
-                    todo_completed: response.data.todo_completed
-                })
-            })
-            .catch(function(error) {
-                console.log(error)
-            })
-    }
-
-    onChangeTodoDescription(e) {
+  componentDidMount() {
+    axios
+      .get("http://localhost:4000/employees/" + this.props.match.params.id)
+      .then(response => {
         this.setState({
-            todo_description: e.target.value
+          employees_Name: response.data.employees_Name,
+          employees_Email: response.data.employees_Email,
+          employees_ID: response.data.employees_ID,
+          employees_Manager: response.data.employees_Manager,
+          employees_Team: response.data.employees_Team,
+          employees_Status: response.data.employees_Status
         });
-    }
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
 
-    onChangeTodoResponsible(e) {
-        this.setState({
-            todo_responsible: e.target.value
-        });
-    }
+  onChangeEmployeesName(e) {
+    this.setState({
+      employees_Name: e.target.value
+    });
+  }
 
-    onChangeTodoPriority(e) {
-        this.setState({
-            todo_priority: e.target.value
-        });
-    }
+  onChangeEmployeesEmail(e) {
+    this.setState({
+      employees_Email: e.target.value
+    });
+  }
 
-    onChangeTodoCompleted(e) {
-        this.setState({
-            todo_completed: !this.state.todo_completed
-        });
-    }
+  onChangeEmployeesID(e) {
+    this.setState({
+      employees_ID: e.target.value
+    });
+  }
 
-    onSubmit(e) {
-        e.preventDefault();
-        const obj = {
-            todo_description: this.state.todo_description,
-            todo_responsible: this.state.todo_responsible,
-            todo_priority: this.state.todo_priority,
-            todo_completed: this.state.todo_completed
-        };
-        axios.post('http://localhost:4000/todos/update/'+this.props.match.params.id, obj)
-            .then(res => console.log(res.data));
+  onChangeEmployeesManager(e) {
+    this.setState({
+      employees_Manager: e.target.value
+    });
+  }
 
-        this.props.history.push('/');
-    }
+  onChangeEmployeesTeam(e) {
+    this.setState({
+      employees_Team: e.target.value
+    });
+  }
 
-    render() {
-        return (
-            <div>
-                <h3>Update Todo</h3>
-                <form onSubmit={this.onSubmit}>
-                    <div className="form-group">
-                        <label>Description: </label>
-                        <input  type="text"
-                                className="form-control"
-                                value={this.state.todo_description}
-                                onChange={this.onChangeTodoDescription}
-                                />
-                    </div>
-                    <div className="form-group">
-                        <label>Responsible: </label>
-                        <input  type="text"
-                                className="form-control"
-                                value={this.state.todo_responsible}
-                                onChange={this.onChangeTodoResponsible}
-                                />
-                    </div>
-                    <div className="form-group">
-                        <div className="form-check form-check-inline">
-                            <input  className="form-check-input"
-                                    type="radio"
-                                    name="priorityOptions"
-                                    id="priorityLow"
-                                    value="Low"
-                                    checked={this.state.todo_priority==='Low'}
-                                    onChange={this.onChangeTodoPriority}
-                                    />
-                            <label className="form-check-label">Low</label>
-                        </div>
-                        <div className="form-check form-check-inline">
-                            <input  className="form-check-input"
-                                    type="radio"
-                                    name="priorityOptions"
-                                    id="priorityMedium"
-                                    value="Medium"
-                                    checked={this.state.todo_priority==='Medium'}
-                                    onChange={this.onChangeTodoPriority}
-                                    />
-                            <label className="form-check-label">Medium</label>
-                        </div>
-                        <div className="form-check form-check-inline">
-                            <input  className="form-check-input"
-                                    type="radio"
-                                    name="priorityOptions"
-                                    id="priorityHigh"
-                                    value="High"
-                                    checked={this.state.todo_priority==='High'}
-                                    onChange={this.onChangeTodoPriority}
-                                    />
-                            <label className="form-check-label">High</label>
-                        </div>
-                        <div className="form-check">
-                            <input  type="checkbox"
-                                    className="form-check-input"
-                                    id="completedCheckbox"
-                                    name="completedCheckbox"
-                                    onChange={this.onChangeTodoCompleted}
-                                    checked={this.state.todo_completed}
-                                    value={this.state.todo_completed}
-                                    />
-                            <label className="form-check-label" htmlFor="completedCheckbox">
-                                Completed
-                            </label>
-                        </div>
-                        <br/>
-                        <div className="form-group">
-                            <input type="submit" value="Update Todo" className="btn btn-primary" />
-                        </div>
-                    </div>
-                </form>
+  onChangeEmployeesStatus(e) {
+    this.setState({
+      employees_Status: e.target.value
+    });
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+    const obj = {
+      employees_Name: this.state.employees_Name,
+      employees_Email: this.state.employees_Email,
+      employees_ID: this.state.employees_ID,
+      employees_Manager: this.state.employees_Manager,
+      employees_Team: this.state.employees_Team,
+      employees_Status: this.state.employees_Status
+    };
+    axios
+      .post(
+        "http://localhost:4000/employees/update/" + this.props.match.params.id,
+        obj
+      )
+      .then(res => console.log(res.data));
+
+    this.props.history.push("/EmployeesList");
+  }
+
+  render() {
+    return (
+      <div style={{ marginTop: 20 }}>
+        <h3>Add New Employee</h3>
+        <form onSubmit={this.onSubmit}>
+          <div className="form-group">
+            <label>
+              <b>Employee Name:</b>{" "}
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              value={this.state.employees_Name}
+              onChange={this.onChangeEmployeesName}
+            />
+          </div>
+          <div className="form-group">
+            <label>
+              <b>Employee Email:</b>{" "}
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              value={this.state.employees_Email}
+              onChange={this.onChangeEmployeesEmail}
+            />
+          </div>
+          <div className="form-group">
+            <label>
+              <b>Employee ID:</b>{" "}
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              value={this.state.employees_ID}
+              onChange={this.onChangeEmployeesID}
+            />
+          </div>
+          <div className="form-group">
+            <label>
+              <b>Employee Manager: </b>
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              value={this.state.employees_Manager}
+              onChange={this.onChangeEmployeesManager}
+            />
+          </div>
+          <div className="form-group">
+            <label>
+              <b>Employee Team:</b>{" "}
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              value={this.state.employees_Team}
+              onChange={this.onChangeEmployeesTeam}
+            />
+          </div>
+          <div className="form-group">
+            <div className="form-check form-check-inline">
+              <input
+                className="form-check-input"
+                type="radio"
+                name="statusOptions"
+                id="statusC"
+                value="Contractor"
+                checked={this.state.employees_Status === "Contractor"}
+                onChange={this.onChangeEmployeesStatus}
+              />
+              <label className="form-check-label">Contractor</label>
             </div>
-        )
-    }
+            <div className="form-check form-check-inline">
+              <input
+                className="form-check-input"
+                type="radio"
+                name="statusOptions"
+                id="statusF"
+                value="Full"
+                checked={this.state.employees_Status === "Full"}
+                onChange={this.onChangeEmployeesStatus}
+              />
+              <label className="form-check-label">Full Time</label>
+            </div>
+          </div>
+          <div className="form-group">
+            <input type="submit" value="Submit" className="btn btn-primary" />
+          </div>
+        </form>
+      </div>
+    );
+  }
 }

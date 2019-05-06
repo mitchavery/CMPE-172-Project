@@ -33,6 +33,18 @@ export default class EmployeesList extends Component {
           })
         }
 
+        componentDidUpdate()
+        {
+          axios.get('http://localhost:4000/employees/')
+          .then(response => {
+              this.setState({employees: response.data});
+          })
+          .catch(function (error) {
+              console.log(error);
+          })
+        }
+        
+
     employeesList() {
         var test = this.state.employees.map(function(currentEmployee, i) {
             return <Employee employee={currentEmployee} key={i} />;
