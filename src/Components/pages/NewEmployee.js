@@ -5,10 +5,10 @@ export default class NewEmployee extends Component {
   render() {
     return (
         <div>
-        <p className="lead">
-         You havs successfully added a new employee, {""}
+        <p1 className="lead">
+         <b>You have successfully added a new employee, {""}</b>
           <Link to="/EmployeesList">click here</Link>
-        </p>
+        </p1>
     </div>
     );
   }

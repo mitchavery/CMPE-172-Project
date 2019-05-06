@@ -41,7 +41,7 @@ class Navbar extends Component {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/Search">
-                  Search
+                  Map
                 </Link>
               </li>
               <li className="nav-item">
