@@ -45,11 +45,6 @@ class Navbar extends Component {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/Settings">
-                  Profile
-                </Link>
-              </li>
-              <li className="nav-item">
                 <Link className="nav-link" to="/Admin">
                   Logout
                 </Link>

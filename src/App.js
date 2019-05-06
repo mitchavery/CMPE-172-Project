@@ -5,7 +5,10 @@ import Navbar from './Components/layout/Navbar';
 import Footer1 from './Components/layout/Footer1'; 
 import Home from './Components/pages/Home'; 
 import Admin from './Components/pages/Admin'; 
+import EmployeeInfo from './Components/pages/EmployeeInfo'; 
 import Edit from './Components/pages/Edit'; 
+import Search2 from './Components/pages/Search2'; 
+import NewEmployee from './Components/pages/NewEmployee'; 
 import profile from './Components/pages/profile'; 
 import EmployeesList from './Components/pages/EmployeesList'; 
 import Search from './Components/pages/Search';
@@ -42,6 +45,9 @@ class App extends Component {
               <SecureRoute path="/Search" exact={true} component={Search} />
               <SecureRoute path="/EmployeesList" exact={true} component={EmployeesList} />
               <SecureRoute path="/Edit/:id" exact={true} component={Edit} />
+              <SecureRoute path="/NewEmployee" exact={true} component={NewEmployee} />
+              <SecureRoute path="/EmployeeInfo" exact={true} component={EmployeeInfo} />
+              <SecureRoute path="/Search2" exact={true} component={Search2} />
               <Route
                 path="/login"
                 render={() => <Login baseUrl="https://dev-329764.okta.com" />}

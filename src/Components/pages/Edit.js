@@ -100,7 +100,7 @@ export default class Edit extends Component {
   render() {
     return (
       <div style={{ marginTop: 20 }}>
-        <h3>Add New Employee</h3>
+        <h3>Update Employee Information</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label>
@@ -184,7 +184,7 @@ export default class Edit extends Component {
             </div>
           </div>
           <div className="form-group">
-            <input type="submit" value="Submit" className="btn btn-primary" />
+            <input type="submit" value="Submit" className="btn btn-secondary" />
           </div>
         </form>
       </div>

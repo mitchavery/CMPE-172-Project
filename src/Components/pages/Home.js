@@ -45,7 +45,7 @@ export default withAuth(
         <div>
           <p className="lead">
             You have entered the employee portal,{" "}
-            <Link to="/portal">click here</Link>
+            <Link to="/EmployeesList">click here</Link>
           </p>
           <button className="btn btn-light btn-lg" onClick={this.logout}>
             Logout

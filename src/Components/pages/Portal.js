@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Mitch from '../Mitch.png'
 
 class Staff extends Component {
   state = {
@@ -22,6 +23,7 @@ class Staff extends Component {
     return (
       <div>
         <h1>Welcome {currentUserName}</h1>
+        <img src={Mitch} width="202" height="211" alt="Mitch" />
         <p><b>Email:</b> {currentUserEmail}</p>
         <p><b>Phone number:</b> 510-589-1194 </p>
         <p><b>Net Pay:</b>$33.0/hr </p>

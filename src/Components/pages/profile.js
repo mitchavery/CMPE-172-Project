@@ -84,6 +84,8 @@ export default class profile extends Component {
           employees_Team: '',
           employees_Status: ''
         });
+
+        this.props.history.push("/NewEmployee");
     }
 
     render() {
@@ -156,7 +158,7 @@ export default class profile extends Component {
                         </div>
                     </div>
                     <div className="form-group">
-                        <input type="submit" value="Submit" className="btn btn-primary" />
+                        <input type="submit" value="Submit" className="btn btn-secondary" />
                     </div>
                 </form>
             </div>
