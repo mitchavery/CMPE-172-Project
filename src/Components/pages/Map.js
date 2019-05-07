@@ -243,6 +243,7 @@ class Map extends Component{
 		let map;
 		if( this.props.center.lat !== undefined ) {
 			map = <div>
+				<h1>Look Up Office Location</h1>
 				<div>
 					<div className="form-group">
 						<label htmlFor="">City</label>
