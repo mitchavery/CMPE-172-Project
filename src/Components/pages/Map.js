@@ -244,7 +244,6 @@ class Map extends Component{
 		if( this.props.center.lat !== undefined ) {
 			map = <div>
 				<div>
-					<h1>Find an Office Location</h1>
 					<div className="form-group">
 						<label htmlFor="">City</label>
 						<input type="text" name="city" className="form-control" onChange={ this.onChange } readOnly="readOnly" value={ this.state.city }/>
