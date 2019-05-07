@@ -35,32 +35,56 @@ class App extends Component {
           onAuthRequired={onAuthRequired}
         >
           <div className="App">
-          
             <Navbar />
             <div className="container">
               <Route path="/" exact={true} component={Home} />
-              <SecureRoute path="/profile" exact={true} component={profile} />
+              <SecureRoute
+                path="/profile"
+                exact={true}
+                component={profile}
+              />
               <SecureRoute path="/Admin" exact={true} component={Admin} />
-              <SecureRoute path="/Settings" exact={true} component={Settings} />
+              <SecureRoute
+                path="/Settings"
+                exact={true}
+                component={Settings}
+              />
               <SecureRoute path="/Portal" exact={true} component={Portal} />
               <SecureRoute path="/Search" exact={true} component={Search} />
-              <SecureRoute path="/EmployeesList" exact={true} component={EmployeesList} />
+              <SecureRoute
+                path="/EmployeesList"
+                exact={true}
+                component={EmployeesList}
+              />
               <SecureRoute path="/Edit/:id" exact={true} component={Edit} />
-              <SecureRoute path="/NewEmployee" exact={true} component={NewEmployee} />
+              <SecureRoute
+                path="/NewEmployee"
+                exact={true}
+                component={NewEmployee}
+              />
               <SecureRoute path="/Map" exact={true} component={Map} />
-              <SecureRoute path="/Search2" exact={true} component={Search2} />
+              <SecureRoute
+                path="/Search2"
+                exact={true}
+                component={Search2}
+              />
               <SecureRoute path="/Titles" exact={true} component={Titles} />
               <Route
                 path="/login"
-                render={() => <Login baseUrl="https://dev-329764.okta.com" />}
+                render={() => (
+                  <Login baseUrl="https://dev-329764.okta.com" />
+                )}
               />
-              <Route path="/implicit/callback" component={ImplicitCallback} />
+              <Route
+                path="/implicit/callback"
+                component={ImplicitCallback}
+              />
             </div>
-            <Footer1 />
           </div>
+          <Footer1 />
+          <div />
         </Security>
       </Router>
-
     );
   }
 }
