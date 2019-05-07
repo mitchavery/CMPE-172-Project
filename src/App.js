@@ -7,6 +7,7 @@ import Home from './Components/pages/Home';
 import Admin from './Components/pages/Admin'; 
 import Map from './Components/pages/Map'; 
 import Edit from './Components/pages/Edit'; 
+import Delete from './Components/pages/Delete'; 
 import Search2 from './Components/pages/Search2'; 
 import NewEmployee from './Components/pages/NewEmployee'; 
 import Titles from './Components/pages/Titles'; 
@@ -61,6 +62,12 @@ class App extends Component {
                 path="/NewEmployee"
                 exact={true}
                 component={NewEmployee}
+              />
+              <SecureRoute path="/Delete/:id" exact={true} component={Delete} />
+              <SecureRoute
+                path="/Delete"
+                exact={true}
+                component={Delete}
               />
               <SecureRoute path="/Map" exact={true} component={Map} />
               <SecureRoute

@@ -24,6 +24,7 @@ class Staff extends Component {
       <div>
         <h1>Welcome {currentUserName}</h1>
         <img src={Mitch} width="192" height="201" alt="Mitch" />
+        <p></p>
         <p><b>Email:</b> {currentUserEmail}</p>
         <p><b>Phone number:</b> 510-589-1194 </p>
         <p><b>Net Pay: </b>$33.0/hr </p>

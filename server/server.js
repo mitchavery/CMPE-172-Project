@@ -36,6 +36,15 @@ employeesRoutes.route('/:id').get(function(req, res) {
     });
 });
 
+employeesRoutes.route('/:id').delete(function(req, res) {
+    Employees.findByIdAndRemove({
+        _id: req.params.id
+    }, function (err, user) {
+        if (err) return res.send(err);
+        res.json({ message: 'Employees rsDeleted' });
+    });
+});
+
 employeesRoutes.route('/add').post(function(req, res) {
     let employees = new Employees(req.body);
     employees.save()

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '@okta/okta-react';
+import { RSA_PKCS1_OAEP_PADDING } from 'constants';
 //import Portal from '../Portal.png'; 
 //import "./Home.css"
 
@@ -47,13 +48,28 @@ export default withAuth(
             You have entered the employee portal,{" "}
             <Link to="/EmployeesList">click here</Link>
           </p>
+          <p className="lead">
+            View our GitHub repository,{" "}
+            <a href="https://github.com/mitchavery/CMPE172Project">GitHub</a>
+          </p>
+          <p className="lead">
+            Google Drive Link,{" "}
+            <a href="https://www.google.com">Drive</a>
+          </p>
+          <p className="lead">
+            View our Jenkins Server,{" "}
+            <a href="https://www.google.com">Jenkins</a>
+          </p>
+          <br />
           <button className="btn btn-light btn-lg" onClick={this.logout}>
             Logout
           </button>
         </div>
       ) : (
         <div>
-          <p className="lead">If you are an employee, please login below</p>
+          <p className="lead">
+            If you are an employee, please login below
+          </p>
           <button className="btn btn-dark btn-lg" onClick={this.login}>
             Login
           </button>

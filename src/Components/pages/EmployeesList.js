@@ -13,6 +13,9 @@ const Employee = props => (
         <td>
             <Link to={"/edit/"+props.employee._id}>Edit</Link>
         </td>
+        <td>
+            <Link to={"/delete/"+props.employee._id}>Delete</Link>
+        </td>
     </tr>    
 )
 
