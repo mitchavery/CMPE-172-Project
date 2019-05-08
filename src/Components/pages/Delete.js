@@ -68,6 +68,7 @@ export default class Delete extends Component {
             <input
               type="text"
               className="form-control"
+              readOnly="readOnly"
               value={this.state.employees_Name}
               onChange={this.onChangeEmployeesName}
             />
@@ -79,6 +80,7 @@ export default class Delete extends Component {
             <input
               type="text"
               className="form-control"
+              readOnly="readOnly"
               value={this.state.employees_Email}
               onChange={this.onChangeEmployeesEmail}
             />
@@ -90,6 +92,7 @@ export default class Delete extends Component {
             <input
               type="text"
               className="form-control"
+              readOnly="readOnly"
               value={this.state.employees_ID}
               onChange={this.onChangeEmployeesID}
             />
@@ -101,6 +104,7 @@ export default class Delete extends Component {
             <input
               type="text"
               className="form-control"
+              readOnly="readOnly"
               value={this.state.employees_Manager}
               onChange={this.onChangeEmployeesManager}
             />
@@ -112,6 +116,7 @@ export default class Delete extends Component {
             <input
               type="text"
               className="form-control"
+              readOnly="readOnly"
               value={this.state.employees_Team}
               onChange={this.onChangeEmployeesTeam}
             />
@@ -124,6 +129,7 @@ export default class Delete extends Component {
                 name="statusOptions"
                 id="statusC"
                 value="Contractor"
+                readOnly="readOnly"
                 checked={this.state.employees_Status === "Contractor"}
                 onChange={this.onChangeEmployeesStatus}
               />
@@ -136,6 +142,7 @@ export default class Delete extends Component {
                 name="statusOptions"
                 id="statusF"
                 value="Full"
+                readOnly="readOnly"
                 checked={this.state.employees_Status === "Full"}
                 onChange={this.onChangeEmployeesStatus}
               />
@@ -143,7 +150,7 @@ export default class Delete extends Component {
             </div>
           </div>
           <div className="form-group">
-            <input type="submit" value="Submit" className="btn btn-secondary" />
+            <input type="submit" value="Delete" className="btn btn-danger" />
           </div>
         </form>
       </div>

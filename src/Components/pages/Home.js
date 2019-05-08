@@ -49,15 +49,15 @@ export default withAuth(
             <Link to="/EmployeesList">click here</Link>
           </p>
           <p className="lead">
-            View our GitHub repository,{" "}
+          <b>View our GitHub repository: {" "}</b>
             <a href="https://github.com/mitchavery/CMPE172Project">GitHub</a>
           </p>
           <p className="lead">
-            Google Drive Link,{" "}
+            <b>Google Drive Link: {" "}</b>
             <a href="https://www.google.com">Drive</a>
           </p>
           <p className="lead">
-            View our Jenkins Server,{" "}
+            <b>View our Jenkins Server: {" "}</b>
             <a href="https://www.google.com">Jenkins</a>
           </p>
           <br />

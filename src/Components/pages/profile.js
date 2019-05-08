@@ -158,7 +158,7 @@ export default class profile extends Component {
                         </div>
                     </div>
                     <div className="form-group">
-                        <input type="submit" value="Submit" className="btn btn-secondary" />
+                        <input type="submit" value="Submit" className="btn btn-success" />
                     </div>
                 </form>
             </div>

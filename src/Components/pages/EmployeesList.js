@@ -69,6 +69,8 @@ export default class EmployeesList extends Component {
                             <th>Employee Manager</th>
                             <th>Employee Team</th>
                             <th>Employee Status</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
