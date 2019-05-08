@@ -59,7 +59,7 @@ export default class Delete extends Component {
   render() {
     return (
       <div style={{ marginTop: 20 }}>
-        <h3>Delete Employee and their Information</h3>
+        <h3>Delete Employee Information</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label>

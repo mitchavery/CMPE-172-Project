@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '@okta/okta-react';
 import { RSA_PKCS1_OAEP_PADDING } from 'constants';
+import Mitch from '../Mitch.png'
 //import Portal from '../Portal.png'; 
 //import "./Home.css"
 
@@ -45,19 +46,22 @@ export default withAuth(
       const mainContent = this.state.authenticated ? (
         <div>
           <p className="lead">
-            You have entered the employee portal,{" "}
-            <Link to="/EmployeesList">click here</Link>
+            <b>You have entered the administrative portal, </b>
+            <Link to="/EmployeesList">Click Here</Link>
+            <hr size="150" color="gray" />
           </p>
           <p className="lead">
-          <b>View our GitHub repository: {" "}</b>
-            <a href="https://github.com/mitchavery/CMPE172Project">GitHub</a>
+            <b>View our GitHub repository: </b>
+            <a href="https://github.com/mitchavery/CMPE172Project">
+              GitHub
+            </a>
           </p>
           <p className="lead">
-            <b>Google Drive Link: {" "}</b>
+            <b>Google Drive Link: </b>
             <a href="https://www.google.com">Drive</a>
           </p>
           <p className="lead">
-            <b>View our Jenkins Server: {" "}</b>
+            <b>View our Jenkins Server: </b>
             <a href="https://www.google.com">Jenkins</a>
           </p>
           <br />
@@ -77,11 +81,14 @@ export default withAuth(
       );
 
       return (
-        <div className="jumbotron">
-          <h1 className="display-4">Employee Staff Portal</h1>
-          {mainContent}
+        <div>
+          <header className="jumbotron">
+            <div class="container">
+              <h1 className="display-4">Admin Staff Portal</h1>
+              {mainContent}
+            </div>
+          </header>
         </div>
-
       );
     }
   }

@@ -58,26 +58,42 @@ export default class EmployeesList extends Component {
 
     render() {
         return (
-            <div>
-                <h3>Employees List</h3>
-                <table className="table table-striped" style={{ marginTop: 20 }}>
-                    <thead>
-                        <tr>
-                            <th>Employee Name</th>
-                            <th>Employee Email</th>
-                            <th>Employees ID</th>
-                            <th>Employee Manager</th>
-                            <th>Employee Team</th>
-                            <th>Employee Status</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        { this.employeesList() }
-                    </tbody>
-                </table>
-            </div>
-        )
+          <form>
+            <h3>Employees List</h3>
+            <form action="/EmployeesList" method="GET" class="form-inline">
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="Search" 
+                  placeholder="Search..."
+                  class="form-control"
+                />
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-secondary"
+                />
+              </div>
+            </form>
+            <table
+              className="table table-striped"
+              style={{ marginTop: 20 }}
+            >
+              <thead>
+                <tr>
+                  <th>Employee Name</th>
+                  <th>Employee Email</th>
+                  <th>Employees ID</th>
+                  <th>Employee Manager</th>
+                  <th>Employee Team</th>
+                  <th>Employee Status</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>{this.employeesList()}</tbody>
+            </table>
+          </form>
+        );
     }
 }
