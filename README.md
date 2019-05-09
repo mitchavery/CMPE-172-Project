@@ -1,13 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-To start this project: 
+To start this project. 
 
-cd server
-nodemon server
-
-client
-npm install
-npm start
+1. Download the source code with download zip option
+2. Extract the source file
+3. cd into the server folder
+4. In a git bash, enter npm install then npm start to start the server
+5. cd back out and into the client folder
+6. enter npm install 
+7. npm start
 
 
 ## Available Scripts
