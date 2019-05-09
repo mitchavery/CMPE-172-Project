@@ -58,23 +58,6 @@ export default class EmployeesList extends Component {
 
     render() {
         return (
-          <form>
-            <h3>Employees List</h3>
-            <form action="/EmployeesList" method="GET" class="form-inline">
-              <div className="form-group">
-                <input
-                  type="text"
-                  name="Search2" 
-                  placeholder="Search..."
-                  class="form-control"
-                />
-                <input
-                  type="submit"
-                  value="Search"
-                  class="btn btn-secondary"
-                />
-              </div>
-            </form>
             <table
               className="table table-striped"
               style={{ marginTop: 20 }}
@@ -93,7 +76,6 @@ export default class EmployeesList extends Component {
               </thead>
               <tbody>{this.employeesList()}</tbody>
             </table>
-          </form>
         );
     }
 }

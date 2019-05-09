@@ -31,9 +31,6 @@ employeesRoutes.route('/').get(function(req, res) {
 });
 
 
-
-
-
 employeesRoutes.route("/:id").get(function(req, res) {
   let id = req.params.id;
   Employees.findById(id, function(err, employees) {
@@ -97,4 +94,6 @@ if (process.env.NODE_ENV === 'production') {
 app.listen(PORT, function() {
     console.log("Server is running on Port: " + PORT);
 });
+
+
 
