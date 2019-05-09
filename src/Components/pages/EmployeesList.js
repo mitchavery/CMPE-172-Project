@@ -81,7 +81,7 @@ export default class EmployeesList extends Component {
               </thead>
               <tbody>{this.employeesList()}</tbody>
             </table>
-            </div> 
+            </div>  
         );
     }
 }
