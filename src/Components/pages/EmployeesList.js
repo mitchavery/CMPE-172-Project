@@ -64,7 +64,7 @@ export default class EmployeesList extends Component {
               <div className="form-group">
                 <input
                   type="text"
-                  name="Search" 
+                  name="Search2" 
                   placeholder="Search..."
                   class="form-control"
                 />

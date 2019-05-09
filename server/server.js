@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path'); 
 const mongoose = require('mongoose');
 const employeesRoutes = express.Router();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 let Employees = require('./employees.model');
 
@@ -29,11 +30,15 @@ employeesRoutes.route('/').get(function(req, res) {
     }); 
 });
 
-employeesRoutes.route('/:id').get(function(req, res) {
-    let id = req.params.id;
-    Employees.findById(id, function(err, employees) {
-        res.json(employees);
-    });
+
+
+
+
+employeesRoutes.route("/:id").get(function(req, res) {
+  let id = req.params.id;
+  Employees.findById(id, function(err, employees) {
+    res.json(employees);
+  });
 });
 
 employeesRoutes.route('/:id').delete(function(req, res) {
@@ -77,8 +82,18 @@ employeesRoutes.route('/update/:id').post(function(req, res) {
     });
 });
 
+
 app.use('/employees', employeesRoutes);
  
+if (process.env.NODE_ENV === 'production') {
+    // Set static folder
+    app.use(express.static('client/build'));
+  
+    app.get('*', (req, res) => {
+      res.sendFile(path.resolve(__dirname,'build', 'index.html'));
+    });
+  }
+
 app.listen(PORT, function() {
     console.log("Server is running on Port: " + PORT);
 });

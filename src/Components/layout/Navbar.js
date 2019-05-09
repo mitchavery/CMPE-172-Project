@@ -44,11 +44,6 @@ class Navbar extends Component {
                   Map
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/Admin">
-                  Logout
-                </Link>
-              </li>
             </ul>
           </div>
         </div>

@@ -178,7 +178,7 @@ export default class Edit extends Component {
                 id="statusF"
                 value="Full"
                 checked={this.state.employees_Status === "Full"}
-                onChange={this.onChangeEmployeesStatus}
+                onChange={this.onChangeEmployeesStatus}   
               />
               <label className="form-check-label">Full Time</label>
             </div>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '@okta/okta-react';
 import { RSA_PKCS1_OAEP_PADDING } from 'constants';
-import Mitch from '../Mitch.png'
+//import Mitch from '../Mitch.png'
 //import Portal from '../Portal.png'; 
 //import "./Home.css"
 
