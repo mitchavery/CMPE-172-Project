@@ -58,10 +58,15 @@ export default class EmployeesList extends Component {
 
     render() {
         return (
+          <div>
+            <h1>Employees List</h1> 
+          
+          
             <table
               className="table table-striped"
               style={{ marginTop: 20 }}
             >
+            
               <thead>
                 <tr>
                   <th>Employee Name</th>
@@ -76,6 +81,7 @@ export default class EmployeesList extends Component {
               </thead>
               <tbody>{this.employeesList()}</tbody>
             </table>
+            </div> 
         );
     }
 }
