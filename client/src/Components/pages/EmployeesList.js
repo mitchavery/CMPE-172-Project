@@ -12,7 +12,7 @@ const Employee = props => (
         <td>{props.employee.employees_Status}</td> 
         <td>
             <Link to={"/edit/"+props.employee._id}>Edit</Link>
-        </td>
+        </td>     
         <td>
             <Link to={"/delete/"+props.employee._id}>Delete</Link>
         </td>
