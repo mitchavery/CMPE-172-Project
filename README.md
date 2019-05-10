@@ -10,6 +10,10 @@ To start this project.
 6. enter npm install 
 7. npm start
 
+Use credentials: 
+username: oktacmpe172project@gmail.com
+password: Cmpe172123
+
 
 ## Available Scripts
 
